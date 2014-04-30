@@ -20,6 +20,22 @@ java -jar gdx-setup.jar --dir . --name spite-and-malice --package sigseg.game.sn
 vi README.md # You're reading the results
 ```
 
+## Configure IntelliJ
+
+1. Don't use Android Studio
+2. Import Project -> build.gradle in root
+3. Configure desktop run:
+    * Down arrow to left of Run button
+    * Edit Configurations...
+    * + to add new configuration
+    * Application
+    * Name: Desktop
+    * Main class: (hit ... on far right): DesktopLauncher
+    * Working directory: <what's/already/there/plus>/android/assets
+    * Use classpath of module: desktop
+    * Apply. Ok.
+4. Now you should be able to run the game on the desktop.
+
 ## License
 
 Apache for now.
