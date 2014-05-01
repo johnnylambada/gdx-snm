@@ -13,7 +13,7 @@ public class SNMGame extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
+		img = new Texture("cards/0.5/s01S.png");
 	}
 
 	@Override
