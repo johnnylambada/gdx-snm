@@ -262,4 +262,23 @@ function svg2png() {
 }
 echo 'svg2png@Convert svgs in art/svg to art/gen/x where x is the -m mag' >> $T/.hmm
 
+function mkassets() {
+    (
+    croot
+    rm -rf android/assets
+    mkdir -p android/assets/cards
+    cp -R art/gen/png/ android/assets/cards
+    )
+}
+echo 'mkassets@Create the assets directory' >> $T/.hmm
+
+function generate() {
+    gencards
+    svg2png -m 0.5
+    svg2png -m 1
+    svg2png -m 2
+    mkassets
+}
+echo 'generate@Generate everything that needs generating' >> $T/.hmm
+
 unset T f
