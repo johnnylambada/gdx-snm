@@ -62,3 +62,6 @@ build/
 ## Local
 /.hmm
 /art/gen/
+
+## Generated
+android/assets/
