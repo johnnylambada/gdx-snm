@@ -254,7 +254,7 @@ function svg2png() {
     local dest=art/gen/png/$mag
     rm -rf $dest
     mkdir -p $dest
-    for svgpath in $(gfind art/svg art/gen/svg -name "*.svg"); do
+    for svgpath in $(gfind art/gen/svg -name "*.svg"); do
         file=$(basename $svgpath | sed 's/\.svg//')
         rsvg-convert $svgpath -z $mag -o $dest/$file.png
     done
@@ -264,19 +264,20 @@ echo 'svg2png@Convert svgs in art/svg to art/gen/x where x is the -m mag' >> $T/
 
 function mkassets() {
     (
+    local classpath=tools/gdx-tools.jar:tools/gdx.jar
+    local mag="$(echo "include(config.m4)_MAGNIFICATION" | m4 -I $(gettop))"
     croot
     rm -rf android/assets
-    mkdir -p android/assets/cards
-    cp -R art/gen/png/ android/assets/cards
+    mkdir -p android/assets
+    java -classpath $classpath com.badlogic.gdx.tools.texturepacker.TexturePacker art/gen/png/$mag android/assets cards
     )
 }
 echo 'mkassets@Create the assets directory' >> $T/.hmm
 
 function generate() {
+    local mag="$(echo "include(config.m4)_MAGNIFICATION" | m4 -I $(gettop))"
     gencards
-    svg2png -m 0.5
-    svg2png -m 1
-    svg2png -m 2
+    svg2png -m $mag
     mkassets
 }
 echo 'generate@Generate everything that needs generating' >> $T/.hmm
