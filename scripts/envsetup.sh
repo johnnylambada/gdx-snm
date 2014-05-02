@@ -275,10 +275,14 @@ function mkassets() {
 echo 'mkassets@Create the assets directory' >> $T/.hmm
 
 function generate() {
+    (
+    croot
     local mag="$(echo "include(config.m4)_MAGNIFICATION" | m4 -I $(gettop))"
     gencards
     svg2png -m $mag
+    cp art/png/* art/gen/png/$mag
     mkassets
+    )
 }
 echo 'generate@Generate everything that needs generating' >> $T/.hmm
 

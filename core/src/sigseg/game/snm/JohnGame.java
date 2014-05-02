@@ -4,17 +4,22 @@ import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import sigseg.game.snm.screen.GameScreen;
 import sigseg.game.snm.screen.ScreenManager;
 
 public class JohnGame implements ApplicationListener {
 	
 	public static int WIDTH = 480, HEIGHT = 800;
-	private SpriteBatch batch;
+	public TextureAtlas atlas;
+	public SpriteBatch batch;
+	public static JohnGame inst;
 	
 	@Override
-	public void create() {		
+	public void create() {
+		inst = this;
 		batch = new SpriteBatch();
+		atlas = new TextureAtlas(Gdx.files.internal("cards.atlas"));
 		ScreenManager.set(new GameScreen());
 	}
 

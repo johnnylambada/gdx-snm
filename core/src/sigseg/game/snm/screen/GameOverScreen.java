@@ -1,6 +1,7 @@
 package sigseg.game.snm.screen;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import sigseg.game.snm.JohnGame;
 import sigseg.game.snm.TextureManager;
@@ -9,7 +10,7 @@ import sigseg.game.snm.camera.OrthoCamera;
 public class GameOverScreen extends Screen {
 
 	private OrthoCamera camera;
-	private Texture texture;
+	private Sprite texture;
 	
 	public GameOverScreen(boolean won) {
 		if (won)
