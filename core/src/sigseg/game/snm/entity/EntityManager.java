@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
-import sigseg.game.snm.JohnGame;
+import sigseg.game.snm.SNMGame;
 import sigseg.game.snm.SpriteManager;
 import sigseg.game.snm.camera.OrthoCamera;
 import sigseg.game.snm.screen.GameOverScreen;
@@ -18,8 +18,8 @@ public class EntityManager {
 	public EntityManager(int amount, OrthoCamera camera) {
 		player = new Player(new Vector2(230, 15), new Vector2(0, 0), this, camera);
 		for (int i = 0; i < amount; i++) {
-			float x = MathUtils.random(0, JohnGame.WIDTH - SpriteManager.ENEMY.getWidth());
-			float y = MathUtils.random(JohnGame.HEIGHT, JohnGame.HEIGHT * 3);
+			float x = MathUtils.random(0, SNMGame.WIDTH - SpriteManager.ENEMY.getWidth());
+			float y = MathUtils.random(SNMGame.HEIGHT, SNMGame.HEIGHT * 3);
 			float speed = MathUtils.random(2, 5);
 			addEntity(new Enemy(new Vector2(x, y), new Vector2(0, -speed)));
 		}

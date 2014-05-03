@@ -1,7 +1,7 @@
 package sigseg.game.snm.entity;
 
 import com.badlogic.gdx.math.Vector2;
-import sigseg.game.snm.JohnGame;
+import sigseg.game.snm.SNMGame;
 import sigseg.game.snm.SpriteManager;
 
 public class Missile extends Entity {
@@ -16,7 +16,7 @@ public class Missile extends Entity {
 	}
 	
 	public boolean checkEnd() {
-		return pos.y >= JohnGame.HEIGHT;
+		return pos.y >= SNMGame.HEIGHT;
 	}
 	
 }

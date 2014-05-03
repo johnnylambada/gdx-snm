@@ -3,7 +3,7 @@ package sigseg.game.snm.entity;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.math.Vector2;
-import sigseg.game.snm.JohnGame;
+import sigseg.game.snm.SNMGame;
 import sigseg.game.snm.SpriteManager;
 import sigseg.game.snm.camera.OrthoCamera;
 
@@ -26,7 +26,7 @@ public class Player extends Entity {
 		int dir = 0;
 		if (Gdx.input.isTouched()) {
 			Vector2 touch = camera.unprojectCoordinates(Gdx.input.getX(), Gdx.input.getY());
-			if (touch.x > JohnGame.WIDTH / 2)
+			if (touch.x > SNMGame.WIDTH / 2)
 				dir = 2;
 			else
 				dir = 1;

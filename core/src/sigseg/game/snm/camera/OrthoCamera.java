@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
-import sigseg.game.snm.JohnGame;
+import sigseg.game.snm.SNMGame;
 
 public class OrthoCamera extends OrthographicCamera {
 
@@ -14,7 +14,7 @@ public class OrthoCamera extends OrthographicCamera {
 	Vector2 pos = new Vector2();
 
 	public OrthoCamera() {
-		this(new VirtualViewport(JohnGame.WIDTH, JohnGame.HEIGHT));
+		this(new VirtualViewport(SNMGame.WIDTH, SNMGame.HEIGHT));
 	}
 
 	public OrthoCamera(VirtualViewport virtualViewport) {
@@ -69,7 +69,7 @@ public class OrthoCamera extends OrthographicCamera {
     }
 
 	public void resize() {
-		VirtualViewport virtualViewport = new VirtualViewport(JohnGame.WIDTH, JohnGame.HEIGHT);
+		VirtualViewport virtualViewport = new VirtualViewport(SNMGame.WIDTH, SNMGame.HEIGHT);
 		setVirtualViewport(virtualViewport);
 		updateViewport();
 	}

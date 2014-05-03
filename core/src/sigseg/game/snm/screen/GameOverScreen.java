@@ -2,7 +2,7 @@ package sigseg.game.snm.screen;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import sigseg.game.snm.JohnGame;
+import sigseg.game.snm.SNMGame;
 import sigseg.game.snm.SpriteManager;
 import sigseg.game.snm.camera.OrthoCamera;
 
@@ -33,7 +33,7 @@ public class GameOverScreen extends Screen {
 	public void render(SpriteBatch sb) {
 		sb.setProjectionMatrix(camera.combined);
 		sb.begin();
-		sb.draw(sprite, JohnGame.WIDTH / 2 - sprite.getWidth() / 2, JohnGame.HEIGHT / 2 - sprite.getHeight() / 2);
+		sb.draw(sprite, SNMGame.WIDTH / 2 - sprite.getWidth() / 2, SNMGame.HEIGHT / 2 - sprite.getHeight() / 2);
 		sb.end();
 	}
 
