@@ -2,12 +2,12 @@ package sigseg.game.snm.entity;
 
 import com.badlogic.gdx.math.Vector2;
 import sigseg.game.snm.JohnGame;
-import sigseg.game.snm.TextureManager;
+import sigseg.game.snm.SpriteManager;
 
 public class Missile extends Entity {
 
 	public Missile(Vector2 pos) {
-		super(TextureManager.MISSILE, pos, new Vector2(0, 5));
+		super(SpriteManager.MISSILE, pos, new Vector2(0, 5));
 	}
 
 	@Override

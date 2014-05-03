@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.math.Vector2;
 import sigseg.game.snm.JohnGame;
-import sigseg.game.snm.TextureManager;
+import sigseg.game.snm.SpriteManager;
 import sigseg.game.snm.camera.OrthoCamera;
 
 public class Player extends Entity {
@@ -14,7 +14,7 @@ public class Player extends Entity {
 	private long lastFire;
 	
 	public Player(Vector2 pos, Vector2 direction, EntityManager entityManager, OrthoCamera camera) {
-		super(TextureManager.PLAYER, pos, direction);
+		super(SpriteManager.PLAYER, pos, direction);
 		this.entityManager = entityManager;
 		this.camera = camera;
 	}
@@ -41,7 +41,7 @@ public class Player extends Entity {
 		
 		//if (Gdx.input.isKeyPressed(Keys.SPACE)) {
 			if (System.currentTimeMillis() - lastFire >= 350) {
-				entityManager.addEntity(new Missile(pos.cpy().add(25, TextureManager.PLAYER.getHeight())));
+				entityManager.addEntity(new Missile(pos.cpy().add(25, SpriteManager.PLAYER.getHeight())));
 				lastFire = System.currentTimeMillis();
 			}
 		//}

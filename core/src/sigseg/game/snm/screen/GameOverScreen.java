@@ -1,22 +1,21 @@
 package sigseg.game.snm.screen;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import sigseg.game.snm.JohnGame;
-import sigseg.game.snm.TextureManager;
+import sigseg.game.snm.SpriteManager;
 import sigseg.game.snm.camera.OrthoCamera;
 
 public class GameOverScreen extends Screen {
 
 	private OrthoCamera camera;
-	private Sprite texture;
+	private Sprite sprite;
 	
 	public GameOverScreen(boolean won) {
 		if (won)
-			texture = TextureManager.GAME_WON;
+			sprite = SpriteManager.GAME_WON;
 		else
-			texture = TextureManager.GAME_OVER;
+			sprite = SpriteManager.GAME_OVER;
 	}
 	
 	@Override
@@ -34,7 +33,7 @@ public class GameOverScreen extends Screen {
 	public void render(SpriteBatch sb) {
 		sb.setProjectionMatrix(camera.combined);
 		sb.begin();
-		sb.draw(texture, JohnGame.WIDTH / 2 - texture.getWidth() / 2, JohnGame.HEIGHT / 2 - texture.getHeight() / 2);
+		sb.draw(sprite, JohnGame.WIDTH / 2 - sprite.getWidth() / 2, JohnGame.HEIGHT / 2 - sprite.getHeight() / 2);
 		sb.end();
 	}
 
